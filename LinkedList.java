@@ -47,25 +47,16 @@ sc.close();
 public void deleteBegin()
 {
     if(head==null){
-        System.out.println("List is empty,nothing to delete");
-        return;
+        System.out.println("List is Empty");
     }
-    if(head==tail)
-    {
-        head=null;
-        tail=null;
-    }
-    else
-    {
-        Node current=head;
-        while (current.next!=tail){
-            current=current.next;
-        }
-        current.next=null;
-        tail=current;
+    else{
+        Node temp=head;
+        head=head.next;
+        System.out.println("Deleted Element is:"+temp.data);
     }
 }
-public void displayList() {
+
+    public void displayList() {
         Node current = head;
         while (current != null) {
         System.out.print(current.data + " -> ");
